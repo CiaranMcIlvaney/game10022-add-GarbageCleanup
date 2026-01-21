@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
 
     private GameObject player;
     public GameObject poker;
+    public GameObject pokerRaycast;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,8 @@ public class CameraController : MonoBehaviour
 
         // Player rotation
         player.transform.rotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
-        // Poker rotation
-        poker.transform.rotation = Quaternion.AngleAxis(mouseLook.x, poker.transform.forward);
+
+        // PokerRaycast rotation
+        pokerRaycast.transform.rotation = transform.localRotation;
     }
 }

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     public GameObject poker;
+    public Camera playerCamera;
 
     public LayerMask garbage;
 
@@ -22,9 +23,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // On left click
+        if (Input.GetMouseButtonDown(0))
         {
+            // TEMP raycast checking
             CheckGarbage();
+            // TODO:
+            // Add different actions for different raycasts
+            // only check one, return what it hits, then switch statement for what happens
         }
     }
 
@@ -35,10 +41,10 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        // Normalize so the movement doesn't get added incorrectly
-        movement.Normalize();
-
         movement = (transform.forward * v * moveSpeed) + (transform.right * h * moveSpeed);
+
+        // Normalize so the movement doesn't get added incorrectly
+        movement = Vector3.ClampMagnitude(movement, moveSpeed);
 
         // Take current position, add the calc above
         rb.MovePosition(transform.position + movement * Time.deltaTime);
@@ -48,11 +54,11 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(poker.transform.position, Vector3.forward, out hit, 100f, garbage))
+        // Sends a ray to what the player is looking at. If it's a piece of garbage, delete it
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 100f, garbage))
         {
-            Debug.Log("Hit");
-            // If collision, return true
-            Destroy(gameObject);
+            // If collision, destroy the object it hit
+            Destroy(hit.collider.gameObject);
         }
     }
 }
