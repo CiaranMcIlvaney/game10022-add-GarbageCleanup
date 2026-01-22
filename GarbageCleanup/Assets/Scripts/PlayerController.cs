@@ -7,15 +7,17 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-
     private Vector3 movement;
+    private Rigidbody rb;
+    private bool isGrounded;
+    public LayerMask ground;
+    public float jumpHeight = 10f;
 
     [Header("Raycasting")]
-    private Rigidbody rb;
     public GameObject poker;
     public Camera playerCamera;
-
     public LayerMask garbage;
+    private Vector3 boxSize = new Vector3(0.5f, 0.3f, 0.5f);
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
@@ -31,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        isGrounded = IsPlayerGrounded();
+
         // On left click
         if (Input.GetMouseButtonDown(0))
         {
@@ -39,6 +43,13 @@ public class PlayerController : MonoBehaviour
             // TODO:
             // Add different actions for different raycasts
             // only check one, return what it hits, then switch statement for what happens
+        }
+
+        // Jumping code
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+            isGrounded = false;
         }
     }
 
@@ -56,6 +67,29 @@ public class PlayerController : MonoBehaviour
 
         // Take current position, add the calc above
         rb.MovePosition(transform.position + movement * Time.deltaTime);
+    }
+
+    private bool IsPlayerGrounded()
+    {
+        if (Physics.BoxCast(transform.position, boxSize, -transform.up, transform.rotation, 1f, ground))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Draws the BoxCast used for jump detection
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawCube(transform.position - transform.up * 1f, boxSize);
+    //}
+
+    private void Jump()
+    {
+        // Make the player jump
+        rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
     }
 
     private void CheckGarbage()
