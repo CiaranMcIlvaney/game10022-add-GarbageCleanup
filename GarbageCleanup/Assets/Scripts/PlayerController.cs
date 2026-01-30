@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,19 +15,31 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 10f;
 
     [Header("Raycasting")]
-    public GameObject poker;
     public Camera playerCamera;
     public LayerMask garbage;
     private Vector3 boxSize = new Vector3(0.5f, 0.3f, 0.5f);
+
+    [Header("Poker")]
+    public GameObject poker;
+    public GameObject pokerExtension;
+    public LayerMask grapplePoint;
+    private float pokerRange = 5f;
+    private bool isPokerExtended;
+    private bool isPlayerGrappled;
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
     private int score;
 
+    [Header("Animation")]
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        isPokerExtended = false;
 
         scoreText.text = $"Current Garbage: {score}";
     }
@@ -35,14 +48,30 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = IsPlayerGrounded();
 
-        // On left click
+        // On left click, check if player is close enough to garbage
         if (Input.GetMouseButtonDown(0))
         {
-            // TEMP raycast checking
             CheckGarbage();
-            // TODO:
-            // Add different actions for different raycasts
-            // only check one, return what it hits, then switch statement for what happens
+        }
+
+        // Pole extending and retracting on right click
+        if (Input.GetMouseButtonDown(1))
+        {
+            isPokerExtended = !isPokerExtended;
+
+            // If the poker gets extended, check if it hits a grapple point
+            if (isPokerExtended)
+            {
+                animator.Play("PokerExtend");
+                pokerRange = 10f;
+                CheckGrapple();
+            }
+            else if (!isPokerExtended)
+            {
+                animator.Play("PokerRetract");
+                pokerRange = 5f;
+                isPlayerGrappled = false;
+            }
         }
 
         // Jumping code
@@ -97,7 +126,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
 
         // Sends a ray to what the player is looking at. If it's a piece of garbage, delete it
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 100f, garbage))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, pokerRange, garbage))
         {
             // If collision, destroy the object it hit
             Destroy(hit.collider.gameObject);
@@ -105,6 +134,18 @@ public class PlayerController : MonoBehaviour
             // Update score
             score++;
             scoreText.text = $"Current Garbage: {score}";
+        }
+    }
+
+    private void CheckGrapple()
+    {
+        RaycastHit hit;
+
+        // Sends a ray to what the player is looking at. If it's a piece of garbage, delete it
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, pokerRange, grapplePoint))
+        {
+            isPlayerGrappled = true;
+            Debug.Log("Hit grapple");
         }
     }
 }
