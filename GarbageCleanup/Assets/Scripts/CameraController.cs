@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Mouse movement
+    [Header("Mouse Movement")]
     public float mouseSensitivity = 3f;
     public float smoothing = 1.5f;
     private Vector2 mouseLook;
     private Vector2 smoothMovement;
 
+    [Header("Game Objects")]
     private GameObject player;
     public GameObject poker;
-    public GameObject pokerRaycast;
+
+    [Header("Script Linking")]
+    public PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -49,8 +52,5 @@ public class CameraController : MonoBehaviour
 
         // Player rotation
         player.transform.rotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
-
-        // PokerRaycast rotation
-        pokerRaycast.transform.rotation = transform.localRotation;
     }
 }
