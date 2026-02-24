@@ -26,9 +26,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         rb = GetComponent<Rigidbody>();
 
-        scoreText.text = $"Current Garbage: {score}";
+        //scoreText.text = $"Current Garbage: {score}";
     }
 
     private void Update()
