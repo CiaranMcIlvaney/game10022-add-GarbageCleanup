@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         isPokerExtended = false;
 
-        scoreText.text = $"Current Garbage: {score}";
+        // scoreText.text = $"Current Garbage: {score}";
     }
 
     private void Update()
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
 
             // Update score
             score++;
-            scoreText.text = $"Current Garbage: {score}";
+            // scoreText.text = $"Current Garbage: {score}";
         }
     }
 
