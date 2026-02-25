@@ -162,7 +162,6 @@ public class PlayerController : MonoBehaviour
             if (collider.gameObject.tag == "GrapplePoint")
             {
                 // Add colour/material changing
-                //Destroy(collider.gameObject);
                 collider.gameObject.GetComponent<MeshRenderer>().material = yellowMaterial;
             }
         }
