@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerGrappled { get; private set; }
     private GameObject currentGrapplePoint;
     private float pokerCounter = 0;
-    private float pokerCooldown = 2f;
+    private float pokerCooldown = 0.5f;
+
+    public Material blackMaterial;
+    public Material yellowMaterial;
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
@@ -51,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = IsPlayerGrounded();
-        CheckIfGrappleIsNear();
+        //CheckIfGrappleIsNear();
 
         // On left click, check if player is close enough to garbage
         if (Input.GetMouseButtonDown(0))
@@ -62,13 +65,12 @@ public class PlayerController : MonoBehaviour
         // Pole extending and retracting on right click
         if (Input.GetMouseButtonDown(1))
         {
-            isPokerExtended = !isPokerExtended;
-
             // If the poker gets extended, check if it hits a grapple point
             // Only allow poker state change if the cooldown is over
-            if (isPokerExtended && pokerCounter >= pokerCooldown)
+            if (!isPokerExtended && pokerCounter >= pokerCooldown)
             {
                 animator.Play("PokerExtend");
+                isPokerExtended = !isPokerExtended;
                 pokerCounter = 0f;
 
                 // Extend poker range
@@ -76,9 +78,10 @@ public class PlayerController : MonoBehaviour
                 // Determine if the player should be grappled
                 CheckGrapple();
             }
-            else if (!isPokerExtended && pokerCounter >= pokerCooldown)
+            else if (isPokerExtended && pokerCounter >= pokerCooldown)
             {
                 animator.Play("PokerRetract");
+                isPokerExtended = !isPokerExtended;
                 pokerCounter = 0f;
 
                 // If the player was grappled, pull them toward the grapple point
@@ -160,6 +163,7 @@ public class PlayerController : MonoBehaviour
             {
                 // Add colour/material changing
                 //Destroy(collider.gameObject);
+                collider.gameObject.GetComponent<MeshRenderer>().material = yellowMaterial;
             }
         }
     }
