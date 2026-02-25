@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Garbage { Waste, Plastic, Paper, Electronic}
+public enum Garbage { Waste, Plastic, Paper, Electronic }
 
 [Serializable]
 
-public struct TetrominoData
+public struct GarbageData
 {
     public Garbage garbageType;
 }
