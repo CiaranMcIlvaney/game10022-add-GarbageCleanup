@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7739359989346050644}
   - component: {fileID: 5513335779151533726}
   - component: {fileID: 1943116246841926738}
-  - component: {fileID: 6319331222777690064}
+  - component: {fileID: 2140112186183092746}
   m_Layer: 0
   m_Name: Recycle cardboard closed Type 1
   m_TagString: Untagged
@@ -104,9 +104,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7, y: 0.70000005, z: 1}
-  m_Center: {x: 0, y: 0.34998882, z: 0}
---- !u!114 &6319331222777690064
+  m_Size: {x: 0.7714988, y: 0.73645407, z: 1.1139696}
+  m_Center: {x: 0.0059634894, y: 0.36821583, z: 0.023622036}
+--- !u!114 &2140112186183092746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6306079470648883019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 250b10a03a730a542b5af17c4d968a92, type: 3}
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data:
