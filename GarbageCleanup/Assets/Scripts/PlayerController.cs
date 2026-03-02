@@ -41,6 +41,12 @@ public class PlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
 
+    [Header("Inventory")]
+    public InventoryController inventory;
+
+    [Header("Bins")]
+    public LayerMask binLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         isPokerExtended = false;
 
-        scoreText.text = $"Current Garbage: {score}";
+        // scoreText.text = $"Current Garbage: {score}";
     }
 
     private void Update()
@@ -162,7 +168,6 @@ public class PlayerController : MonoBehaviour
             if (collider.gameObject.tag == "GrapplePoint")
             {
                 // Add colour/material changing
-                //Destroy(collider.gameObject);
                 collider.gameObject.GetComponent<MeshRenderer>().material = yellowMaterial;
             }
         }
@@ -191,15 +196,36 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
 
-        // Sends a ray to what the player is looking at. If it's a piece of garbage, delete it
+        // Raycast forward to find garbage
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, pokerRange, garbage))
         {
-            // If collision, destroy the object it hit
-            Destroy(hit.collider.gameObject);
+            if (inventory == null)
+            {
+                Debug.LogError("InventoryController not assigned on PlayerController.");
+                return;
+            }
 
-            // Update score
-            score++;
-            scoreText.text = $"Current Garbage: {score}";
+            // Try add to inventory instead of destroying
+            bool added = inventory.TryAdd(hit.collider.gameObject);
+
+            // If you still want score for pickup, do it here (optional)
+            // if (added) score++;
+
+            return;
+        }
+
+        // If we didn't hit garbage, we can check bins with the same left click
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, pokerRange, binLayer))
+        {
+            var bin = hit.collider.GetComponentInParent<BinController>();
+            if (bin != null)
+            {
+                bin.TryDeposit(inventory);
+            }
+            else
+            {
+                Debug.Log("[Bin] Hit a bin object but no BinController found.");
+            }
         }
     }
 
