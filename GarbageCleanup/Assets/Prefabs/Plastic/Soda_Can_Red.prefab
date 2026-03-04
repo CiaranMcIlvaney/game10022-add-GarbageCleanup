@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 6109891314280530453}
   - component: {fileID: 8974966740255523952}
   m_Layer: 7
-  m_Name: Soda can 1 red dirt
+  m_Name: Soda_Can_Red
   m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,4 +348,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    garbageType: 0
+    garbageType: 1

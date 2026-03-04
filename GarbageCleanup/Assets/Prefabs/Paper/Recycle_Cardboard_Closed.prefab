@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4246761009583593544}
   - component: {fileID: 1598188549662045679}
   m_Layer: 0
-  m_Name: Recycle cardboard closed Type 1 1
+  m_Name: Recycle_Cardboard_Closed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7, y: 0.70000005, z: 1}
-  m_Center: {x: 0, y: 0.34998882, z: 0}
+  m_Size: {x: 0.7483145, y: 0.73252726, z: 1.0529743}
+  m_Center: {x: -0.0016326308, y: 0.36625242, z: -0.004602015}
 --- !u!114 &1598188549662045679
 MonoBehaviour:
   m_ObjectHideFlags: 0
