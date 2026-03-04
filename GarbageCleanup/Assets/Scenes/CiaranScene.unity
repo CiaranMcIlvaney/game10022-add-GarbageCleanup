@@ -4643,11 +4643,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0858b4d17fe5e4299f49249f0a05e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garbagePrefabs:
+  wastePrefabs:
   - {fileID: 8156583129572680380, guid: 1dc60c5091cd72e4991732fcf5ab9226, type: 3}
-  - {fileID: 6306079470648883019, guid: 78913b3f4b6deff469fe908242acb732, type: 3}
-  - {fileID: 2275073779294990670, guid: 66c8560f9b9264b4f942b293bd23e886, type: 3}
+  plasticPrefabs:
   - {fileID: 335959293432150613, guid: adda0aac3ebac884f93362a14b10aefe, type: 3}
+  paperPrefabs:
+  - {fileID: 4492577343849647588, guid: c011b4b1bfa9cc24c8261ee52db9559f, type: 3}
+  electronicPrefabs:
+  - {fileID: 2275073779294990670, guid: 66c8560f9b9264b4f942b293bd23e886, type: 3}
+  wasteChance: 0.35
+  plasticChance: 0.35
+  paperChance: 0.25
+  electronicChance: 0.05
   spawnCount: 1000
   areaCenter: {x: 185.71, y: 10, z: 266.08}
   areaSize: {x: 175, y: 154}

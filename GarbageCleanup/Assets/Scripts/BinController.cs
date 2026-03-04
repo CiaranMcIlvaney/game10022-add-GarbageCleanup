@@ -9,6 +9,13 @@ public class BinController : MonoBehaviour
     // This determines what type of garbage this bin accepts
     public Garbage acceptedType = Garbage.Waste;
 
+    public static Dictionary<Garbage, int> CorrectDeposits = new Dictionary<Garbage, int>()
+    {
+        { Garbage.Waste, 0},
+        { Garbage.Plastic, 0 },
+        { Garbage.Paper, 0 },
+        { Garbage.Electronic, 0 }
+    };
     // Called when the player interacts with the bin 
     public void TryDeposit(InventoryController inventory)
     {
@@ -31,8 +38,14 @@ public class BinController : MonoBehaviour
             // Destroy the game object from the scene completely
             Destroy(removed);
 
+            // Increment correct deposit counter for that type
+            CorrectDeposits[acceptedType]++;
+
             // Print success message
             Debug.Log($"SUCCESS! Deposited {currentType.Value} into {acceptedType} bin.");
+
+            // Debug totals for UI later on
+            Debug.Log($"[Total - Correct Deposits]" + $"Waste:{CorrectDeposits[Garbage.Waste]}" + $"Plastic:{CorrectDeposits[Garbage.Plastic]}" + $"Paper:{CorrectDeposits[Garbage.Paper]}" + $"Electronic:{CorrectDeposits[Garbage.Electronic]}");
         }
         else
         {
