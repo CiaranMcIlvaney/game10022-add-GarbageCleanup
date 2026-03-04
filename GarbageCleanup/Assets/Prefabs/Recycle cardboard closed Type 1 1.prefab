@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1281592074438077851}
   - component: {fileID: 4246761009583593544}
   - component: {fileID: 1598188549662045679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Recycle cardboard closed Type 1 1
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
