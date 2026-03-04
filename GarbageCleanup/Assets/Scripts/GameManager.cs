@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,7 +29,12 @@ public class GameManager : MonoBehaviour
     {
         // Decrease time
         currentTimeRemaining -= Time.deltaTime;
-        skyLight.transform.Rotate(Vector3.left, 1 * Time.deltaTime);
+
+        // End game if timer runs out
+        if (currentTimeRemaining <= 0)
+        {
+            SceneManager.LoadScene("GameEnd");
+        }
 
         // Float to proper time formatting
         int minutes = Mathf.FloorToInt(currentTimeRemaining / 60);
@@ -37,5 +43,8 @@ public class GameManager : MonoBehaviour
 
         // Display time left
         timerText.text = $"Time: {gameTimeString}";
+
+        // Change light rotation based on the current time of day
+        skyLight.transform.Rotate(Vector3.left, 1 * Time.deltaTime);
     }
 }
