@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa88a2437e632a4ab93d5c1cbf8c807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedType: 1
+  acceptedType: 2
 --- !u!4 &266023427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1025681519537473006, guid: aa99a810914c5b84b9bc5d51f95dd05c, type: 3}
@@ -4647,6 +4647,9 @@ MonoBehaviour:
   - {fileID: 8156583129572680380, guid: 1dc60c5091cd72e4991732fcf5ab9226, type: 3}
   plasticPrefabs:
   - {fileID: 335959293432150613, guid: adda0aac3ebac884f93362a14b10aefe, type: 3}
+  - {fileID: 5534215831294603694, guid: 8806c4e45ea2b3b4ba53a46a00a27b18, type: 3}
+  - {fileID: 3096596856600033354, guid: e09eb45fb22cbd541a80d609e8fe6f84, type: 3}
+  - {fileID: 3247323833296297771, guid: 0e7e0543d56a81745a1f9719c10ca02e, type: 3}
   paperPrefabs:
   - {fileID: 4492577343849647588, guid: c011b4b1bfa9cc24c8261ee52db9559f, type: 3}
   electronicPrefabs:
@@ -5316,7 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa88a2437e632a4ab93d5c1cbf8c807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedType: 2
+  acceptedType: 1
 --- !u!4 &789570479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7462569862156873362, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}

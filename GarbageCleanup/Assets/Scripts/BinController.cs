@@ -12,8 +12,8 @@ public class BinController : MonoBehaviour
     public static Dictionary<Garbage, int> CorrectDeposits = new Dictionary<Garbage, int>()
     {
         { Garbage.Waste, 0},
-        { Garbage.Plastic, 0 },
-        { Garbage.Paper, 0 },
+        { Garbage.Recyclable, 0 },
+        { Garbage.Textile, 0 },
         { Garbage.Electronic, 0 }
     };
     // Called when the player interacts with the bin 
@@ -45,7 +45,7 @@ public class BinController : MonoBehaviour
             Debug.Log($"SUCCESS! Deposited {currentType.Value} into {acceptedType} bin.");
 
             // Debug totals for UI later on
-            Debug.Log($"[Total - Correct Deposits]" + $"Waste:{CorrectDeposits[Garbage.Waste]}" + $"Plastic:{CorrectDeposits[Garbage.Plastic]}" + $"Paper:{CorrectDeposits[Garbage.Paper]}" + $"Electronic:{CorrectDeposits[Garbage.Electronic]}");
+            Debug.Log($"[Total - Correct Deposits]" + $"Waste:{CorrectDeposits[Garbage.Waste]}" + $"Plastic:{CorrectDeposits[Garbage.Recyclable]}" + $"Paper:{CorrectDeposits[Garbage.Textile]}" + $"Electronic:{CorrectDeposits[Garbage.Electronic]}");
         }
         else
         {

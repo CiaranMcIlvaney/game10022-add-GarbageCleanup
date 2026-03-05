@@ -2738,8 +2738,8 @@
     "m_ObjectId": "1b55603d66da4fc49e65dc9ad98b0ac8",
     "m_Title": "BLEND OBJECT COLOR",
     "m_Position": {
-        "x": -44.0,
-        "y": -293.5999755859375
+        "x": -43.0,
+        "y": -293.0
     }
 }
 
@@ -3220,8 +3220,8 @@
     "m_ObjectId": "28d03412e682475ab7ca76b6b496742c",
     "m_Title": "CAVES SET UP",
     "m_Position": {
-        "x": -428.0,
-        "y": 1132.0
+        "x": -427.0,
+        "y": 1133.0
     }
 }
 
@@ -3805,8 +3805,8 @@
     "m_ObjectId": "396d13a284fe4101928818ac42318f01",
     "m_Title": "REFLECTIONS",
     "m_Position": {
-        "x": 288.800048828125,
-        "y": 1117.5999755859375
+        "x": 289.0,
+        "y": 1119.0
     }
 }
 
@@ -5307,8 +5307,8 @@
     "m_ObjectId": "658af11bd853495a95a31486625b0779",
     "m_Title": "PRIMARY FOAM",
     "m_Position": {
-        "x": 2184.7998046875,
-        "y": 1635.199951171875
+        "x": 2185.0,
+        "y": 1636.0
     }
 }
 
@@ -7293,8 +7293,8 @@
     "m_ObjectId": "a688971f8bd04af2a219705e0d9a1f33",
     "m_Title": "FOG",
     "m_Position": {
-        "x": 5603.19970703125,
-        "y": 1632.0
+        "x": 5604.0,
+        "y": 1633.0
     }
 }
 
@@ -7411,8 +7411,8 @@
     "m_ObjectId": "abb3c36d69fe4bd8a6258eff4839ca9a",
     "m_Title": "DEPTH",
     "m_Position": {
-        "x": -1224.7999267578125,
-        "y": -327.20001220703127
+        "x": -1224.0,
+        "y": -326.0
     }
 }
 
@@ -7577,8 +7577,8 @@
     "m_ObjectId": "b1557fbda61d4a8fb1abe459ac967bc7",
     "m_Title": "INTERSECTION FOAM",
     "m_Position": {
-        "x": 2790.39990234375,
-        "y": 1604.800048828125
+        "x": 2791.0,
+        "y": 1606.0
     }
 }
 
@@ -8344,8 +8344,8 @@
     "m_ObjectId": "c63484b628e54536939ae2838e52d66b",
     "m_Title": "WAVES MOVEMENT",
     "m_Position": {
-        "x": 4778.39990234375,
-        "y": -130.3999786376953
+        "x": 4779.0,
+        "y": -129.0
     }
 }
 
@@ -9036,8 +9036,8 @@
     "m_ObjectId": "d8da0964d9b546d09534c80d84befee7",
     "m_Title": "SPECULAR",
     "m_Position": {
-        "x": 3747.2001953125,
-        "y": 1724.0
+        "x": 3748.0,
+        "y": 1725.0
     }
 }
 
@@ -9172,8 +9172,8 @@
     "m_ObjectId": "dd90a22460ad4b1cade700471366fbc8",
     "m_Title": "SECONDARY FOAM(ADDING LAYERS FROM DOWN TO UP)",
     "m_Position": {
-        "x": 1354.4000244140625,
-        "y": 1654.4000244140625
+        "x": 1355.0,
+        "y": 1655.0
     }
 }
 
@@ -9962,8 +9962,8 @@
     "m_ObjectId": "f27f0a3128164d98beb30cd773b63098",
     "m_Title": "CALCULATE WORLD OR LOCAL UVS",
     "m_Position": {
-        "x": -1844.0001220703125,
-        "y": 1764.800048828125
+        "x": -1843.0,
+        "y": 1766.0
     }
 }
 
@@ -10193,8 +10193,8 @@
     "m_ObjectId": "f77ae05689b84c08b5dc11eb4ef5f940",
     "m_Title": "THE MAIN PIPELINE",
     "m_Position": {
-        "x": -1068.7999267578125,
-        "y": 477.5999755859375
+        "x": -1068.0,
+        "y": 479.0
     }
 }
 
