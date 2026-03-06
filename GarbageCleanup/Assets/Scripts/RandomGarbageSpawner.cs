@@ -9,15 +9,15 @@ public class RandomGarbageSpawner : MonoBehaviour
     [Header("Garbage Prefabs By Type")]
 
     [SerializeField] private List<GameObject> wastePrefabs = new();
-    [SerializeField] private List<GameObject> plasticPrefabs = new();
-    [SerializeField] private List<GameObject> paperPrefabs = new();
+    [SerializeField] private List<GameObject> recyclablePrefabs = new();
+    [SerializeField] private List<GameObject> textilePrfabs = new();
     [SerializeField] private List<GameObject> electronicPrefabs = new();
 
     [Header("Spawn Chances")]
 
     [Range(0f, 1f)][SerializeField] private float wasteChance = 0.35f;
-    [Range(0f, 1f)][SerializeField] private float plasticChance = 0.35f;
-    [Range(0f, 1f)][SerializeField] private float paperChance = 0.25f;
+    [Range(0f, 1f)][SerializeField] private float recyclableChance = 0.35f;
+    [Range(0f, 1f)][SerializeField] private float textileChance = 0.25f;
     [Range(0f, 1f)][SerializeField] private float electronicChance = 0.05f;
 
 
@@ -125,6 +125,9 @@ public class RandomGarbageSpawner : MonoBehaviour
             usedPositions.Add(spawnPos);
             spawned++;
         }
+
+        // Tell TrashProgress class how many items were spawned in
+        TrashProgress.SetTotal(spawned);
     }
 
     // Clear Function
@@ -150,20 +153,20 @@ public class RandomGarbageSpawner : MonoBehaviour
         roll -= wasteChance;
 
         // Plastic randomizer
-        if (roll < plasticChance && plasticPrefabs.Count > 0)
+        if (roll < recyclableChance && recyclablePrefabs.Count > 0)
         {
-            return plasticPrefabs[Random.Range(0, plasticPrefabs.Count)];
+            return recyclablePrefabs[Random.Range(0, recyclablePrefabs.Count)];
         }
            
-        roll -= plasticChance;
+        roll -= recyclableChance;
 
         // Paper randomizer
-        if (roll < paperChance && paperPrefabs.Count > 0)
+        if (roll < textileChance && textilePrfabs.Count > 0)
         {
-            return paperPrefabs[Random.Range(0, paperPrefabs.Count)];
+            return textilePrfabs[Random.Range(0, textilePrfabs.Count)];
         }
             
-        roll -= paperChance;
+        roll -= textileChance;
 
         // Electronics randomizer
         if (electronicPrefabs.Count > 0)
