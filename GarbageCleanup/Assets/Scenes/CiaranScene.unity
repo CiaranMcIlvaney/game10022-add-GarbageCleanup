@@ -5507,7 +5507,7 @@ GameObject:
   - component: {fileID: 603849405}
   - component: {fileID: 603849404}
   m_Layer: 5
-  m_Name: PaperText
+  m_Name: TextileText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5659,12 +5659,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasteCorrect: 5
-  plasticCorrect: 10
-  paperCorrect: 10
+  recyclableCorrect: 10
+  textileCorrect: 10
   electronicCorrect: 25
   wasteWrong: 2
-  plasticWrong: 5
-  paperWrong: 5
+  recyclableWrong: 5
+  textileWrong: 5
   electronicWrong: 15
 --- !u!4 &607610597
 Transform:
@@ -5791,16 +5791,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wastePrefabs: []
-  plasticPrefabs:
-  - {fileID: 8982901849353855363, guid: b969c5ad35f83b141bed8854e5876ecd, type: 3}
-  - {fileID: 2410778234154031816, guid: 0389128c87e6f1b49b91a52f06e9a2c5, type: 3}
-  paperPrefabs:
-  - {fileID: 4492577343849647588, guid: c011b4b1bfa9cc24c8261ee52db9559f, type: 3}
+  recyclablePrefabs: []
+  textilePrfabs: []
   electronicPrefabs:
   - {fileID: 2275073779294990670, guid: 66c8560f9b9264b4f942b293bd23e886, type: 3}
   wasteChance: 0.35
-  plasticChance: 0.35
-  paperChance: 0.25
+  recyclableChance: 0.35
+  textileChance: 0.25
   electronicChance: 0.05
   spawnCount: 1000
   areaCenter: {x: 185.71, y: 10, z: 266.08}
@@ -9115,7 +9112,7 @@ GameObject:
   - component: {fileID: 1123283768}
   - component: {fileID: 1123283767}
   m_Layer: 5
-  m_Name: PlasticText
+  m_Name: RecyclableText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9160,7 +9157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Plastic: 0
+  m_text: 'Recyclable: 0
 
 '
   m_isRightToLeft: 0
@@ -11875,8 +11872,8 @@ MonoBehaviour:
   scoreText: {fileID: 663688546}
   cleanedText: {fileID: 1958159008}
   wasteText: {fileID: 1227060228}
-  plasticText: {fileID: 1123283767}
-  paperText: {fileID: 603849404}
+  recyclableText: {fileID: 1123283767}
+  textileText: {fileID: 603849404}
   electronicText: {fileID: 1213841297}
 --- !u!1001 &1528512805
 PrefabInstance:
