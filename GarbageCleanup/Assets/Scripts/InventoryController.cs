@@ -24,6 +24,12 @@ public class InventoryController : MonoBehaviour
     // Returns the currnetly selected item, if the inventory is empty then return null
     public GameObject CurrentItem => (items.Count == 0) ? null : items[Mathf.Clamp(selectedIndex, 0, items.Count - 1)];
 
+    // Lets UI read what items are in the inventory
+    public IReadOnlyList<GameObject> Items => items;
+
+    // Lets UI know which slot is selected
+    public int SelectedIndex => selectedIndex;
+
     void Update()
     {
         // Get scroll wheel input

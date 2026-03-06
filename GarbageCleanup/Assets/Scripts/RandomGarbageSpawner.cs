@@ -125,6 +125,9 @@ public class RandomGarbageSpawner : MonoBehaviour
             usedPositions.Add(spawnPos);
             spawned++;
         }
+
+        // Tell TrashProgress class how many items were spawned in
+        TrashProgress.SetTotal(spawned);
     }
 
     // Clear Function

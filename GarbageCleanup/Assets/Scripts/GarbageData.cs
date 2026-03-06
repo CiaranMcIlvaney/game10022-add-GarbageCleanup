@@ -6,8 +6,10 @@ using UnityEngine;
 public enum Garbage { Waste, Recyclable, Textile, Electronic }
 
 [Serializable]
-
 public struct GarbageData
 {
     public Garbage garbageType;
+
+    [Header("UI")]
+    public Sprite icon;
 }
