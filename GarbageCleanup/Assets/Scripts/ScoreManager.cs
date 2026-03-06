@@ -80,8 +80,8 @@ public class ScoreManager : MonoBehaviour
         switch (type)
         {
             case Garbage.Waste: return wasteCorrect;
-            case Garbage.Plastic: return plasticCorrect;
-            case Garbage.Paper: return paperCorrect;
+            case Garbage.Recyclable: return plasticCorrect;
+            //case Garbage.Recyclable: return paperCorrect;
             case Garbage.Electronic: return electronicCorrect;
             default: return 0;
         }
@@ -93,8 +93,8 @@ public class ScoreManager : MonoBehaviour
         switch (type)
         {
             case Garbage.Waste: return wasteWrong;
-            case Garbage.Plastic: return plasticWrong;
-            case Garbage.Paper: return paperWrong;
+            case Garbage.Recyclable: return plasticWrong;
+            //case Garbage.Paper: return paperWrong;
             case Garbage.Electronic: return electronicWrong;
             default: return 0;
         }
@@ -106,9 +106,9 @@ public class ScoreManager : MonoBehaviour
         Debug.Log($"[SCORE] {Score}");
 
         // Print how many correct deposits have been made
-        Debug.Log($"[Correct] Waste:{Correct[Garbage.Waste]} Plastic:{Correct[Garbage.Plastic]} Paper:{Correct[Garbage.Paper]} Electronic:{Correct[Garbage.Electronic]}");
+        Debug.Log($"[Correct] Waste:{Correct[Garbage.Waste]} Plastic:{Correct[Garbage.Recyclable]} Paper:{Correct[Garbage.Recyclable]} Electronic:{Correct[Garbage.Electronic]}");
         
         // Print how many wrong deposits have been made 
-        Debug.Log($"[Wrong]   Waste:{Wrong[Garbage.Waste]} Plastic:{Wrong[Garbage.Plastic]} Paper:{Wrong[Garbage.Paper]} Electronic:{Wrong[Garbage.Electronic]}");
+        Debug.Log($"[Wrong]   Waste:{Wrong[Garbage.Waste]} Plastic:{Wrong[Garbage.Recyclable]} Paper:{Wrong[Garbage.Recyclable]} Electronic:{Wrong[Garbage.Electronic]}");
     }
 }
