@@ -26,8 +26,8 @@ public class UiController : MonoBehaviour
 
         // Correct counts of items placed in the correct bins
         wasteText.text = $"Waste: {ScoreManager.Instance.Correct[Garbage.Waste]}";
-        recyclableText.text = $"Plastic: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
-        textileText.text = $"Paper: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
+        recyclableText.text = $"Recyclable: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
+        textileText.text = $"Textile: {ScoreManager.Instance.Correct[Garbage.Textile]}";
         electronicText.text = $"Electronic: {ScoreManager.Instance.Correct[Garbage.Electronic]}";
     }
 }
