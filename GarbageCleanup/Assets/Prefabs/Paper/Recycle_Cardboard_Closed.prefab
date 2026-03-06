@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1281592074438077851}
   - component: {fileID: 4246761009583593544}
   - component: {fileID: 1598188549662045679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Recycle_Cardboard_Closed
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     garbageType: 2
+    icon: {fileID: 21300000, guid: 71abcd3ef4fdd5a4b92573ddf0c9d3f4, type: 3}
