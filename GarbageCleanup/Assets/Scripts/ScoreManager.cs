@@ -10,6 +10,9 @@ public class ScoreManager : MonoBehaviour
     // Current player score
     public int Score { get; private set; } = 0;
 
+    // Text that displays when trash it deposited
+    public string feedback = ("");
+
     // Dictionary that tracks how many correct deposits the player has made for each garbage type
     public Dictionary<Garbage, int> Correct = new();
 
@@ -54,6 +57,9 @@ public class ScoreManager : MonoBehaviour
 
         // Print updated score + stats in console
         DebugTotals();
+
+        //Change text
+        feedback = ("Success!!");
     }
 
     public void AddWrong(Garbage type)
@@ -63,6 +69,9 @@ public class ScoreManager : MonoBehaviour
 
         // Subtract score based on the garbage type
         Score -= GetWrongPenalty(type);
+
+        //Change text
+        feedback = ("Failure! :(");
 
         // Prevent score from going below zero
         if (Score < 0)

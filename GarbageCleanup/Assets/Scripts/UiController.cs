@@ -8,6 +8,7 @@ public class UiController : MonoBehaviour
     [Header("Main UI")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI cleanedText;
+    [SerializeField] private TextMeshProUGUI feedbackText;
 
     [Header("Correct Deposits")]
     [SerializeField] private TextMeshProUGUI wasteText;
@@ -29,5 +30,6 @@ public class UiController : MonoBehaviour
         recyclableText.text = $"Recyclable: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
         textileText.text = $"Textile: {ScoreManager.Instance.Correct[Garbage.Textile]}";
         electronicText.text = $"Electronic: {ScoreManager.Instance.Correct[Garbage.Electronic]}";
+        feedbackText.text = $"{ScoreManager.Instance.feedback}";
     }
 }
