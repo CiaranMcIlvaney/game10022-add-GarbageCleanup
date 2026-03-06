@@ -11,8 +11,8 @@ public class UiController : MonoBehaviour
 
     [Header("Correct Deposits")]
     [SerializeField] private TextMeshProUGUI wasteText;
-    [SerializeField] private TextMeshProUGUI plasticText;
-    [SerializeField] private TextMeshProUGUI paperText;
+    [SerializeField] private TextMeshProUGUI recyclableText;
+    [SerializeField] private TextMeshProUGUI textileText;
     [SerializeField] private TextMeshProUGUI electronicText;
 
     void Update()
@@ -26,8 +26,8 @@ public class UiController : MonoBehaviour
 
         // Correct counts of items placed in the correct bins
         wasteText.text = $"Waste: {ScoreManager.Instance.Correct[Garbage.Waste]}";
-        plasticText.text = $"Plastic: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
-        paperText.text = $"Paper: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
+        recyclableText.text = $"Plastic: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
+        textileText.text = $"Paper: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
         electronicText.text = $"Electronic: {ScoreManager.Instance.Correct[Garbage.Electronic]}";
     }
 }

@@ -20,15 +20,15 @@ public class ScoreManager : MonoBehaviour
 
     // Points given when the player places the correct garbage in the correct bin
     [SerializeField] private int wasteCorrect = 5;
-    [SerializeField] private int plasticCorrect = 10;
-    [SerializeField] private int paperCorrect = 10;
+    [SerializeField] private int recyclableCorrect = 10;
+    [SerializeField] private int textileCorrect = 10;
     [SerializeField] private int electronicCorrect = 25;
 
     // Points removed when the player places garbage in the wrong bin
     [Header("Penalty (Wrong Deposit)")]
     [SerializeField] private int wasteWrong = 2;
-    [SerializeField] private int plasticWrong = 5;
-    [SerializeField] private int paperWrong = 5;
+    [SerializeField] private int recyclableWrong = 5;
+    [SerializeField] private int textileWrong = 5;
     [SerializeField] private int electronicWrong = 15;
 
     void Awake()
@@ -80,8 +80,8 @@ public class ScoreManager : MonoBehaviour
         switch (type)
         {
             case Garbage.Waste: return wasteCorrect;
-            case Garbage.Recyclable: return plasticCorrect;
-            //case Garbage.Recyclable: return paperCorrect;
+            case Garbage.Recyclable: return recyclableCorrect;
+            case Garbage.Textile: return textileCorrect;
             case Garbage.Electronic: return electronicCorrect;
             default: return 0;
         }
@@ -93,8 +93,8 @@ public class ScoreManager : MonoBehaviour
         switch (type)
         {
             case Garbage.Waste: return wasteWrong;
-            case Garbage.Recyclable: return plasticWrong;
-            //case Garbage.Paper: return paperWrong;
+            case Garbage.Recyclable: return recyclableWrong;
+            case Garbage.Textile: return textileCorrect;
             case Garbage.Electronic: return electronicWrong;
             default: return 0;
         }
@@ -106,9 +106,9 @@ public class ScoreManager : MonoBehaviour
         Debug.Log($"[SCORE] {Score}");
 
         // Print how many correct deposits have been made
-        Debug.Log($"[Correct] Waste:{Correct[Garbage.Waste]} Plastic:{Correct[Garbage.Recyclable]} Paper:{Correct[Garbage.Recyclable]} Electronic:{Correct[Garbage.Electronic]}");
+        Debug.Log($"[Correct] Waste:{Correct[Garbage.Waste]} Plastic:{Correct[Garbage.Recyclable]} Paper:{Correct[Garbage.Textile]} Electronic:{Correct[Garbage.Electronic]}");
         
         // Print how many wrong deposits have been made 
-        Debug.Log($"[Wrong]   Waste:{Wrong[Garbage.Waste]} Plastic:{Wrong[Garbage.Recyclable]} Paper:{Wrong[Garbage.Recyclable]} Electronic:{Wrong[Garbage.Electronic]}");
+        Debug.Log($"[Wrong]   Waste:{Wrong[Garbage.Waste]} Plastic:{Wrong[Garbage.Recyclable]} Paper:{Wrong[Garbage.Textile]} Electronic:{Wrong[Garbage.Electronic]}");
     }
 }
