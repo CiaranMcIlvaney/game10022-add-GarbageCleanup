@@ -6,10 +6,20 @@ using UnityEngine;
 public class RandomGarbageSpawner : MonoBehaviour
 {
     // Prefabs that can spawn on the map
-    [Header("Garbage Prefabs")]
+    [Header("Garbage Prefabs By Type")]
 
-    // List of garbage objects that can be spawned
-    [SerializeField] private List<GameObject> garbagePrefabs = new();
+    [SerializeField] private List<GameObject> wastePrefabs = new();
+    [SerializeField] private List<GameObject> recyclablePrefabs = new();
+    [SerializeField] private List<GameObject> textilePrfabs = new();
+    [SerializeField] private List<GameObject> electronicPrefabs = new();
+
+    [Header("Spawn Chances")]
+
+    [Range(0f, 1f)][SerializeField] private float wasteChance = 0.35f;
+    [Range(0f, 1f)][SerializeField] private float recyclableChance = 0.35f;
+    [Range(0f, 1f)][SerializeField] private float textileChance = 0.25f;
+    [Range(0f, 1f)][SerializeField] private float electronicChance = 0.05f;
+
 
     [Header("Item Spawn Count")]
 
@@ -106,7 +116,7 @@ public class RandomGarbageSpawner : MonoBehaviour
             } 
 
             // Choose a random garbage object from the list
-            GameObject prefab = garbagePrefabs[Random.Range(0, garbagePrefabs.Count)];
+            GameObject prefab = PickedBiasedPrefab();
 
             // Spawn it at the position
             Instantiate(prefab, spawnPos, Quaternion.Euler(0f, Random.Range(0f, 360f), 0f), transform);
@@ -115,6 +125,9 @@ public class RandomGarbageSpawner : MonoBehaviour
             usedPositions.Add(spawnPos);
             spawned++;
         }
+
+        // Tell TrashProgress class how many items were spawned in
+        TrashProgress.SetTotal(spawned);
     }
 
     // Clear Function
@@ -125,5 +138,43 @@ public class RandomGarbageSpawner : MonoBehaviour
         {
             DestroyImmediate(transform.GetChild(i).gameObject);
         }
+    }
+
+    private GameObject PickedBiasedPrefab()
+    {
+        float roll = Random.value;
+
+        // Waste randomizer
+        if (roll < wasteChance && wastePrefabs.Count > 0)
+        {
+            return wastePrefabs[Random.Range(0, wastePrefabs.Count)];
+        }
+            
+        roll -= wasteChance;
+
+        // Plastic randomizer
+        if (roll < recyclableChance && recyclablePrefabs.Count > 0)
+        {
+            return recyclablePrefabs[Random.Range(0, recyclablePrefabs.Count)];
+        }
+           
+        roll -= recyclableChance;
+
+        // Paper randomizer
+        if (roll < textileChance && textilePrfabs.Count > 0)
+        {
+            return textilePrfabs[Random.Range(0, textilePrfabs.Count)];
+        }
+            
+        roll -= textileChance;
+
+        // Electronics randomizer
+        if (electronicPrefabs.Count > 0)
+        {
+            return electronicPrefabs[Random.Range(0, electronicPrefabs.Count)];
+        }
+
+        // Safety fallback
+        return null;
     }
 }

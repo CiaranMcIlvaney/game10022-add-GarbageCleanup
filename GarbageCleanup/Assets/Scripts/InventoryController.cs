@@ -24,6 +24,12 @@ public class InventoryController : MonoBehaviour
     // Returns the currnetly selected item, if the inventory is empty then return null
     public GameObject CurrentItem => (items.Count == 0) ? null : items[Mathf.Clamp(selectedIndex, 0, items.Count - 1)];
 
+    // Lets UI read what items are in the inventory
+    public IReadOnlyList<GameObject> Items => items;
+
+    // Lets UI know which slot is selected
+    public int SelectedIndex => selectedIndex;
+
     void Update()
     {
         // Get scroll wheel input
@@ -139,12 +145,17 @@ public class InventoryController : MonoBehaviour
             return null;
         }
 
-        // Get the GarbageController attatched to the object
+        // Try same object, parent, then children (even if they are inactive)
         var gc = item.GetComponent<GarbageController>();
 
         if (gc == null)
         {
-            return null;
+            gc = item.GetComponentInParent<GarbageController>();
+        }
+
+        if (gc == null)
+        {
+            gc = item.GetComponentInChildren<GarbageController>(true);
         }
 
         return gc.data.garbageType;
@@ -159,11 +170,11 @@ public class InventoryController : MonoBehaviour
         }
         var gc = item.GetComponent<GarbageController>();
 
-        if (gc != null)
+        if (gc == null)
         {
-            return $"{item.name} [{gc.data.garbageType}]";
+            gc = item.GetComponentInChildren<GarbageController>(true);
         }
-        
-        return item.name;
+
+        return (gc != null) ? $"{item.name} [{gc.data.garbageType}]" : item.name;
     }
 }
