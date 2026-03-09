@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     garbageType: 0
-    icon: {fileID: 21300000, guid: b2e2907818e922240879ec2e8a96db32, type: 3}
+    icon: {fileID: 21300000, guid: 9d0dd6ed3a9568f4bbc057beae8fe36f, type: 3}
 --- !u!1 &4517626890866877804
 GameObject:
   m_ObjectHideFlags: 0
