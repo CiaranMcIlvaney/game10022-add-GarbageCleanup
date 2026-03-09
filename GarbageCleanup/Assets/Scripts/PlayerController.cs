@@ -30,10 +30,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
+    private bool isGuideEnabled = false;
     private int score;
 
     [Header("Animation")]
-    public Animator animator;
+    public Animator poleAnimator;
+    public Animator guideAnimator;
 
     [Header("Inventory")]
     public InventoryController inventory;
@@ -68,7 +70,7 @@ public class PlayerController : MonoBehaviour
             // Only allow poker state change if the cooldown is over
             if (!isPokerExtended && pokerCounter >= pokerCooldown)
             {
-                animator.Play("PokerExtend");
+                poleAnimator.Play("PokerExtend");
                 isPokerExtended = !isPokerExtended;
                 pokerCounter = 0f;
 
@@ -79,7 +81,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (isPokerExtended && pokerCounter >= pokerCooldown)
             {
-                animator.Play("PokerRetract");
+                poleAnimator.Play("PokerRetract");
                 isPokerExtended = !isPokerExtended;
                 pokerCounter = 0f;
 
@@ -182,7 +184,16 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleGuide()
     {
-
+        if (!isGuideEnabled) 
+        {
+            guideAnimator.Play("GuideEnable");
+            isGuideEnabled = true;
+        }
+        else if (isGuideEnabled)
+        {
+            guideAnimator.Play("GuideDisable");
+            isGuideEnabled = false;
+        }
     }
 }
 

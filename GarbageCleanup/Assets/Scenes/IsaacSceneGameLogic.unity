@@ -1870,6 +1870,7 @@ GameObject:
   - component: {fileID: 246666367}
   - component: {fileID: 246666369}
   - component: {fileID: 246666368}
+  - component: {fileID: 246666370}
   m_Layer: 5
   m_Name: RecyclingGuide
   m_TagString: Untagged
@@ -1934,6 +1935,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246666366}
   m_CullTransparentMesh: 1
+--- !u!95 &246666370
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246666366}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10edf245f78ad8b4882921afc64156ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &266023427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1025681519537473006, guid: aa99a810914c5b84b9bc5d51f95dd05c, type: 3}
@@ -3818,6 +3840,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa99a810914c5b84b9bc5d51f95dd05c, type: 3}
+--- !u!95 &512338679 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1320642399679315546, guid: 0b8369fa1a90d3446ae5f2405c8bc02e, type: 3}
+  m_PrefabInstance: {fileID: 1427920503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &526809177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1025681519537473006, guid: aa99a810914c5b84b9bc5d51f95dd05c, type: 3}
@@ -8713,6 +8740,14 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1119463646}
+    - target: {fileID: 2734458129744585155, guid: 0b8369fa1a90d3446ae5f2405c8bc02e, type: 3}
+      propertyPath: poleAnimator
+      value: 
+      objectReference: {fileID: 512338679}
+    - target: {fileID: 2734458129744585155, guid: 0b8369fa1a90d3446ae5f2405c8bc02e, type: 3}
+      propertyPath: guideAnimator
+      value: 
+      objectReference: {fileID: 246666370}
     - target: {fileID: 5113400064765318456, guid: 0b8369fa1a90d3446ae5f2405c8bc02e, type: 3}
       propertyPath: m_IsActive
       value: 0
