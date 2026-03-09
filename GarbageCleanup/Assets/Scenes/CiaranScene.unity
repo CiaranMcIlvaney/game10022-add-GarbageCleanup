@@ -2646,7 +2646,7 @@ GameObject:
   - component: {fileID: 252261973}
   - component: {fileID: 252261972}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AreaCleanText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5173,7 +5173,7 @@ GameObject:
   - component: {fileID: 474749205}
   - component: {fileID: 474749204}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: WasteText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9966,7 +9966,7 @@ GameObject:
   - component: {fileID: 1120752789}
   - component: {fileID: 1120752788}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: SortedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11729,7 +11729,7 @@ GameObject:
   - component: {fileID: 1266750173}
   - component: {fileID: 1266750172}
   m_Layer: 5
-  m_Name: Text (TMP) (6)
+  m_Name: ObjectiveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12499,7 +12499,7 @@ GameObject:
   - component: {fileID: 1373484719}
   - component: {fileID: 1373484718}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: RecycleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14380,7 +14380,7 @@ GameObject:
   - component: {fileID: 1624756507}
   - component: {fileID: 1624756506}
   m_Layer: 5
-  m_Name: Text (TMP) (5)
+  m_Name: ElectronicText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14805,7 +14805,7 @@ GameObject:
   - component: {fileID: 1684010965}
   - component: {fileID: 1684010964}
   m_Layer: 5
-  m_Name: Text (TMP) (4)
+  m_Name: TextileText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
