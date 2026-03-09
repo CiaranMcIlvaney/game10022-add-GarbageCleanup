@@ -49,19 +49,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8509381135393990318, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc48ef472cae88c46b6f17b8aecc34aa, type: 2}
     - target: {fileID: -8175731060702886927, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc48ef472cae88c46b6f17b8aecc34aa, type: 2}
     - target: {fileID: -4767031606639968382, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc48ef472cae88c46b6f17b8aecc34aa, type: 2}
     - target: {fileID: 204313967407608118, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc48ef472cae88c46b6f17b8aecc34aa, type: 2}
     - target: {fileID: 919132149155446097, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
@@ -69,11 +69,11 @@ PrefabInstance:
       value: Pizza box 1
       objectReference: {fileID: 0}
     - target: {fileID: 1739388868994078211, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc48ef472cae88c46b6f17b8aecc34aa, type: 2}
     - target: {fileID: 6416724229577688537, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc48ef472cae88c46b6f17b8aecc34aa, type: 2}
     m_RemovedComponents: []
@@ -83,6 +83,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2965127882574359869}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2515647287543524197}
   m_SourcePrefab: {fileID: 100100000, guid: 370c3622935b1e14ea4f9797c7fe9e7c, type: 3}
 --- !u!1 &2533839907394124749 stripped
 GameObject:
@@ -110,3 +113,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3, y: 0.05, z: 0.3}
   m_Center: {x: 0, y: 0.025, z: 0}
+--- !u!114 &2515647287543524197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2533839907394124749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    garbageType: 0
+    icon: {fileID: 21300000, guid: ad4d8b76e6acbd141a625d3b1cb66ab0, type: 3}

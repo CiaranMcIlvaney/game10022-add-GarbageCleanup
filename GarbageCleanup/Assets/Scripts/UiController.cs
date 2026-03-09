@@ -15,19 +15,37 @@ public class UiController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textileText;
     [SerializeField] private TextMeshProUGUI electronicText;
 
+    [Header("TEMPORARY PLAYTEST TUTORIAL")]
+    [SerializeField] private TextMeshProUGUI tempText;
+    bool textToggle; 
     void Update()
     {
         // Score
-        scoreText.text = $"Score: {ScoreManager.Instance.Score}";
+        scoreText.text = $"{ScoreManager.Instance.Score}";
 
         // Cleaned percentage of map
         int percent = TrashProgress.GetPercent();
-        cleanedText.text = $"Cleaned: {percent}%";
+        cleanedText.text = $"{percent}%";
 
         // Correct counts of items placed in the correct bins
-        wasteText.text = $"Waste: {ScoreManager.Instance.Correct[Garbage.Waste]}";
-        recyclableText.text = $"Recyclable: {ScoreManager.Instance.Correct[Garbage.Recyclable]}";
-        textileText.text = $"Textile: {ScoreManager.Instance.Correct[Garbage.Textile]}";
-        electronicText.text = $"Electronic: {ScoreManager.Instance.Correct[Garbage.Electronic]}";
+        wasteText.text = $"{ScoreManager.Instance.Correct[Garbage.Waste]}";
+        recyclableText.text = $"{ScoreManager.Instance.Correct[Garbage.Recyclable]}";
+        textileText.text = $"{ScoreManager.Instance.Correct[Garbage.Textile]}";
+        electronicText.text = $"{ScoreManager.Instance.Correct[Garbage.Electronic]}";
+
+        // Playtest Tutorial
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            textToggle = !textToggle;
+        }
+        if (textToggle)
+        {
+            tempText.text = $"WASD to Move    \r\nClick Trash to Collect\r\nClick Bin to Deposit\r\nScroll to Switch Selected Trash\r\nSpace to Jump";
+        }
+        if (!textToggle)
+        {
+            tempText.text = $""; 
+        }
     }
 }
