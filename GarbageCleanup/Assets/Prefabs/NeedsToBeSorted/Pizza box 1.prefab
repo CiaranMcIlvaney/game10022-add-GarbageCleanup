@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     garbageType: 0
-    icon: {fileID: 21300000, guid: ad4d8b76e6acbd141a625d3b1cb66ab0, type: 3}
+    icon: {fileID: 21300000, guid: 18a4bce02f83c3f45866789607f1a5f7, type: 3}
