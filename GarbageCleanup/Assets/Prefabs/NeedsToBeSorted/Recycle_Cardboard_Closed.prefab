@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1281592074438077851}
   - component: {fileID: 4246761009583593544}
   - component: {fileID: 1598188549662045679}
+  - component: {fileID: 8583230830439818522}
   m_Layer: 7
   m_Name: Recycle_Cardboard_Closed
   m_TagString: Garbage
@@ -121,3 +122,18 @@ MonoBehaviour:
   data:
     garbageType: 2
     icon: {fileID: 21300000, guid: 71abcd3ef4fdd5a4b92573ddf0c9d3f4, type: 3}
+--- !u!114 &8583230830439818522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492577343849647588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    garbageType: 0
+    icon: {fileID: 21300000, guid: e94b02727fc9dcb4baf70574d84417af, type: 3}

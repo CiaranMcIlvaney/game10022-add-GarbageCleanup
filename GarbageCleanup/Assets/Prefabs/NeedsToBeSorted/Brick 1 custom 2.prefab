@@ -53,11 +53,11 @@ PrefabInstance:
       value: Brick 1 custom 2
       objectReference: {fileID: 0}
     - target: {fileID: 3282340126836109542, guid: f6965cfb4fbe48b4cb2f3bab54449f9a, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 95e00326d18ab8742a10897a595ed796, type: 2}
     - target: {fileID: 6963437156541689208, guid: f6965cfb4fbe48b4cb2f3bab54449f9a, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 95e00326d18ab8742a10897a595ed796, type: 2}
     m_RemovedComponents: []
@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6965cfb4fbe48b4cb2f3bab54449f9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8846088538097615141}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6965cfb4fbe48b4cb2f3bab54449f9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7185430267676800655}
   m_SourcePrefab: {fileID: 100100000, guid: f6965cfb4fbe48b4cb2f3bab54449f9a, type: 3}
 --- !u!1 &8451693095854207133 stripped
 GameObject:
@@ -94,3 +97,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.092075, y: 0.05715, z: 0.1778}
   m_Center: {x: 0, y: 0.028575, z: 0}
+--- !u!114 &-7185430267676800655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451693095854207133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    garbageType: 0
+    icon: {fileID: 21300000, guid: a76bd989881b83944bbf4bdc07fd1811, type: 3}
