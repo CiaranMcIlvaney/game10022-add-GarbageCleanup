@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public int Score { get; private set; } = 0;
 
     // Text that displays when trash it deposited
-    public string feedback = ("");
+    public string feedback = ("WASD to move, left mouse to pick up/deposite items");
 
     // Dictionary that tracks how many correct deposits the player has made for each garbage type
     public Dictionary<Garbage, int> Correct = new();
@@ -34,6 +34,10 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int textileWrong = 5;
     [SerializeField] private int electronicWrong = 15;
 
+    private void Start()
+    {
+        feedback = ("WASD to move, left mouse to pick up/deposite items");
+    }
     void Awake()
     {
         // Store reference so other scripts can access ScoreManager

@@ -16,6 +16,11 @@ public class UiController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textileText;
     [SerializeField] private TextMeshProUGUI electronicText;
 
+    private void Start()
+    {
+        feedbackText.text = $"WASD to move, left mouse to pick up/deposite items";
+    }
+
     void Update()
     {
         // Score
