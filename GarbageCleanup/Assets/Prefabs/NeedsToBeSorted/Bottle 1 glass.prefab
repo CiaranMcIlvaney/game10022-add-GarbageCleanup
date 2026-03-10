@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3044185594731085938}
   - component: {fileID: 7810650237776721667}
   - component: {fileID: 8835299516949540188}
-  - component: {fileID: 1149251881442743843}
+  - component: {fileID: -7326466425771726167}
   m_Layer: 0
   m_Name: Bottle 1 glass
   m_TagString: Untagged
@@ -169,7 +169,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6858852666998472530, guid: 0cea5fe9e1d991a4b963d5d177368563, type: 3}
---- !u!114 &1149251881442743843
+--- !u!114 &-7326466425771726167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     garbageType: 0
-    icon: {fileID: 21300000, guid: 9d0dd6ed3a9568f4bbc057beae8fe36f, type: 3}
+    icon: {fileID: 0}
 --- !u!1 &4517626890866877804
 GameObject:
   m_ObjectHideFlags: 0
