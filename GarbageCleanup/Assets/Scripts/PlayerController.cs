@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
+    public GameObject guideImage;
     private bool isGuideEnabled = false;
     private int score;
 
     [Header("Animation")]
     public Animator poleAnimator;
-    public Animator guideAnimator;
 
     [Header("Inventory")]
     public InventoryController inventory;
@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         isPokerExtended = false;
+        
+        guideImage.SetActive(false);
 
         // scoreText.text = $"Current Garbage: {score}";
     }
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Toggle showing the recycling guide
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             ToggleGuide();
         }
@@ -184,16 +186,8 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleGuide()
     {
-        if (!isGuideEnabled) 
-        {
-            guideAnimator.Play("GuideEnable");
-            isGuideEnabled = true;
-        }
-        else if (isGuideEnabled)
-        {
-            guideAnimator.Play("GuideDisable");
-            isGuideEnabled = false;
-        }
+        isGuideEnabled = !isGuideEnabled;
+        guideImage.SetActive(isGuideEnabled);
     }
 }
 
