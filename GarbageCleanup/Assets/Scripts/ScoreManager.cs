@@ -33,6 +33,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int recyclableWrong = 5;
     [SerializeField] private int textileWrong = 5;
     [SerializeField] private int electronicWrong = 15;
+    [SerializeField] AudioSource Positive;
+    [SerializeField] AudioSource Negative;
 
     private void Start()
     {
@@ -64,6 +66,8 @@ public class ScoreManager : MonoBehaviour
 
         //Change text
         feedback = ("Success!!");
+        // Play Sound
+        Positive.Play();
     }
 
     public void AddWrong(Garbage type)
@@ -85,6 +89,9 @@ public class ScoreManager : MonoBehaviour
 
         // Print stats to console 
         DebugTotals();
+
+        // Play Sound
+        Negative.Play();
     }
 
     private int GetCorrectPoints(Garbage type)
