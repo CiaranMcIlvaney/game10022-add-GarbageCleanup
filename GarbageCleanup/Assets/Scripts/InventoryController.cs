@@ -30,6 +30,11 @@ public class InventoryController : MonoBehaviour
     // Lets UI know which slot is selected
     public int SelectedIndex => selectedIndex;
 
+    [Header("Audio")]
+
+    [SerializeField] private AudioSource pickupSound;
+
+
     void Update()
     {
         // Get scroll wheel input
@@ -89,6 +94,8 @@ public class InventoryController : MonoBehaviour
 
         // Add it to the inventory list
         items.Add(item);
+
+        pickupSound.Play();
 
         // If this is the first item picked up then automatically select it
         if (items.Count == 1)

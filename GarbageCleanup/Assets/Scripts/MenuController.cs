@@ -14,6 +14,12 @@ public class MenuController : MonoBehaviour
     {
         // CHANGE FOR PLAYTEST
         //SceneManager.LoadScene("IsaacSceneGameLogic");
+        
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.ResetScoreData();
+        }
+        
 
         SceneManager.LoadScene("CiaranScene");
     }

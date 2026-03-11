@@ -42,8 +42,18 @@ public class ScoreManager : MonoBehaviour
     }
     void Awake()
     {
+        // If another ScoreManager already exists then delete this one
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         // Store reference so other scripts can access ScoreManager
         Instance = this;
+        
+        // Dont destroy scoremanager game object when game ends
+        DontDestroyOnLoad(gameObject);
 
         // Initialize the dictionaires so each garbage type starts at 0
         foreach (Garbage g in System.Enum.GetValues(typeof(Garbage)))
@@ -130,5 +140,17 @@ public class ScoreManager : MonoBehaviour
         
         // Print how many wrong deposits have been made 
         Debug.Log($"[Wrong]   Waste:{Wrong[Garbage.Waste]} Plastic:{Wrong[Garbage.Recyclable]} Paper:{Wrong[Garbage.Textile]} Electronic:{Wrong[Garbage.Electronic]}");
+    }
+
+    public void ResetScoreData()
+    {
+        Score = 0;
+        feedback = ("WASD to move, left mouse to pick up/deposite items");
+
+        foreach (Garbage g in System.Enum.GetValues(typeof(Garbage)))
+        {
+            Correct[g] = 0;
+            Wrong[g] = 0;
+        }
     }
 }
