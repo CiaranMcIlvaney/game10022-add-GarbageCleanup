@@ -30,6 +30,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int recyclableWrong = 5;
     [SerializeField] private int textileWrong = 5;
     [SerializeField] private int electronicWrong = 15;
+    [SerializeField] AudioSource Positive;
+    [SerializeField] AudioSource Negative;
 
     void Awake()
     {
@@ -54,6 +56,9 @@ public class ScoreManager : MonoBehaviour
 
         // Print updated score + stats in console
         DebugTotals();
+
+        // Play Sound
+        Positive.Play();
     }
 
     public void AddWrong(Garbage type)
@@ -72,6 +77,9 @@ public class ScoreManager : MonoBehaviour
 
         // Print stats to console 
         DebugTotals();
+
+        // Play Sound
+        Negative.Play();
     }
 
     private int GetCorrectPoints(Garbage type)
