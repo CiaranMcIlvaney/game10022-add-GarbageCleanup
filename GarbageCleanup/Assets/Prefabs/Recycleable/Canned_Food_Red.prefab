@@ -160,3 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     garbageType: 1
+    icon: {fileID: 21300000, guid: 7c5aaf37361afdc44865a385abec59cc, type: 3}

@@ -49,11 +49,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7501208913022575983, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bd9b4313250c4bd40a28f1e5888bf2fa, type: 2}
     - target: {fileID: -3998589399713381530, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bd9b4313250c4bd40a28f1e5888bf2fa, type: 2}
     - target: {fileID: 919132149155446097, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
@@ -61,7 +61,7 @@ PrefabInstance:
       value: Orange mold
       objectReference: {fileID: 0}
     - target: {fileID: 5701916257441593718, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bd9b4313250c4bd40a28f1e5888bf2fa, type: 2}
     m_RemovedComponents: []
@@ -71,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7912483371114825366}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4388386086484528509}
   m_SourcePrefab: {fileID: 100100000, guid: be414f9c5c2f71b41914a6a8c661539d, type: 3}
 --- !u!1 &3525517578834627369 stripped
 GameObject:
@@ -98,3 +101,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.036826
   m_Center: {x: 0, y: 0.036826, z: 0}
+--- !u!114 &4388386086484528509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525517578834627369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    garbageType: 0
+    icon: {fileID: 21300000, guid: 8e28087bd8c90794d9eb032bdc944e45, type: 3}

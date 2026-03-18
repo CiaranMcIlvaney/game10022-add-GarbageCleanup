@@ -10,6 +10,9 @@ public class ScoreManager : MonoBehaviour
     // Current player score
     public int Score { get; private set; } = 0;
 
+    // Text that displays when trash it deposited
+    public string feedback = ("WASD to move, left mouse to pick up/deposite items");
+
     // Dictionary that tracks how many correct deposits the player has made for each garbage type
     public Dictionary<Garbage, int> Correct = new();
 
@@ -33,10 +36,24 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] AudioSource Positive;
     [SerializeField] AudioSource Negative;
 
+    private void Start()
+    {
+        feedback = ("WASD to move, left mouse to pick up/deposite items");
+    }
     void Awake()
     {
+        // If another ScoreManager already exists then delete this one
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         // Store reference so other scripts can access ScoreManager
         Instance = this;
+        
+        // Dont destroy scoremanager game object when game ends
+        DontDestroyOnLoad(gameObject);
 
         // Initialize the dictionaires so each garbage type starts at 0
         foreach (Garbage g in System.Enum.GetValues(typeof(Garbage)))
@@ -57,6 +74,8 @@ public class ScoreManager : MonoBehaviour
         // Print updated score + stats in console
         DebugTotals();
 
+        //Change text
+        feedback = ("Success!!");
         // Play Sound
         Positive.Play();
     }
@@ -68,6 +87,9 @@ public class ScoreManager : MonoBehaviour
 
         // Subtract score based on the garbage type
         Score -= GetWrongPenalty(type);
+
+        //Change text
+        feedback = ("Failure! :(");
 
         // Prevent score from going below zero
         if (Score < 0)
@@ -118,5 +140,17 @@ public class ScoreManager : MonoBehaviour
         
         // Print how many wrong deposits have been made 
         Debug.Log($"[Wrong]   Waste:{Wrong[Garbage.Waste]} Plastic:{Wrong[Garbage.Recyclable]} Paper:{Wrong[Garbage.Textile]} Electronic:{Wrong[Garbage.Electronic]}");
+    }
+
+    public void ResetScoreData()
+    {
+        Score = 0;
+        feedback = ("WASD to move, left mouse to pick up/deposite items");
+
+        foreach (Garbage g in System.Enum.GetValues(typeof(Garbage)))
+        {
+            Correct[g] = 0;
+            Wrong[g] = 0;
+        }
     }
 }

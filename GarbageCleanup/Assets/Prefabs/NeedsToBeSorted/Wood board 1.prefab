@@ -49,11 +49,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2176338747668180253, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ca99865891f42e47bb361ba77637d0b, type: 2}
     - target: {fileID: 335028949762972072, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ca99865891f42e47bb361ba77637d0b, type: 2}
     - target: {fileID: 919132149155446097, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
@@ -65,7 +65,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440675967965851211, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ca99865891f42e47bb361ba77637d0b, type: 2}
     - target: {fileID: 8342081859517622369, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
@@ -73,7 +73,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099881874018054583, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ca99865891f42e47bb361ba77637d0b, type: 2}
     - target: {fileID: 9132273113866767495, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
@@ -87,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7028527515403463705}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3583490103995109960}
   m_SourcePrefab: {fileID: 100100000, guid: 3f1cc0a1b19bbbb4a94a139805388819, type: 3}
 --- !u!1 &6729736096893399107 stripped
 GameObject:
@@ -114,3 +117,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3, y: 0.05, z: 1.2}
   m_Center: {x: 0, y: 0.025, z: 0}
+--- !u!114 &3583490103995109960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6729736096893399107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    garbageType: 0
+    icon: {fileID: 21300000, guid: c20b809458e783646a1c4df71e8720d8, type: 3}

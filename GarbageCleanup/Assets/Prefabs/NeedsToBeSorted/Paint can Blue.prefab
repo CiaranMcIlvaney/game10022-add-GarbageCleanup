@@ -49,11 +49,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 186ac4ee5911d284d80b6abaf1284d41, type: 2}
     - target: {fileID: -70127303949207345, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 186ac4ee5911d284d80b6abaf1284d41, type: 2}
     - target: {fileID: 919132149155446097, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
@@ -61,7 +61,7 @@ PrefabInstance:
       value: Paint can Blue
       objectReference: {fileID: 0}
     - target: {fileID: 4797696587216588814, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 186ac4ee5911d284d80b6abaf1284d41, type: 2}
     m_RemovedComponents: []
@@ -71,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5351286632062179814}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8442671385123849718}
   m_SourcePrefab: {fileID: 100100000, guid: cbe23a43f063c51469d5e83d6bd77515, type: 3}
 --- !u!1 &1644668416814824271 stripped
 GameObject:
@@ -99,3 +102,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -622070899856703774, guid: 841f5576884c0f04594adaf630346ec2, type: 3}
+--- !u!114 &-8442671385123849718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644668416814824271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78210522a28dffc4497f30e8b9de3d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    garbageType: 0
+    icon: {fileID: 21300000, guid: a3380e8a26ce6cc4e899fd0c014578ee, type: 3}

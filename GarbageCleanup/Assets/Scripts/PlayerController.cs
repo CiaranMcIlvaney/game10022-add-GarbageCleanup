@@ -23,23 +23,19 @@ public class PlayerController : MonoBehaviour
     [Header("Poker")]
     //public GameObject poker;
     public GameObject pokerExtension;
-    //public LayerMask grapplePoint;
     private float pokerRange = 5f;
     private bool isPokerExtended;
-    //public bool isPlayerGrappled { get; private set; }
-    //private GameObject currentGrapplePoint;
     private float pokerCounter = 0;
     private float pokerCooldown = 0.5f;
 
-    //public Material blackMaterial;
-    //public Material yellowMaterial;
-
     [Header("UI")]
     public TextMeshProUGUI scoreText;
+    public GameObject guideImage;
+    private bool isGuideEnabled = false;
     private int score;
 
     [Header("Animation")]
-    public Animator animator;
+    public Animator poleAnimator;
 
     [Header("Inventory")]
     public InventoryController inventory;
@@ -53,6 +49,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         isPokerExtended = false;
+        
+        guideImage.SetActive(false);
 
         // scoreText.text = $"Current Garbage: {score}";
     }
@@ -60,7 +58,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = IsPlayerGrounded();
-        //CheckIfGrappleIsNear();
 
         // On left click, check if player is close enough to garbage
         if (Input.GetMouseButtonDown(0))
@@ -75,7 +72,7 @@ public class PlayerController : MonoBehaviour
             // Only allow poker state change if the cooldown is over
             if (!isPokerExtended && pokerCounter >= pokerCooldown)
             {
-                animator.Play("PokerExtend");
+                poleAnimator.Play("PokerExtend");
                 isPokerExtended = !isPokerExtended;
                 pokerCounter = 0f;
 
@@ -86,7 +83,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (isPokerExtended && pokerCounter >= pokerCooldown)
             {
-                animator.Play("PokerRetract");
+                poleAnimator.Play("PokerRetract");
                 isPokerExtended = !isPokerExtended;
                 pokerCounter = 0f;
 
@@ -109,13 +106,11 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        // When to player gets too far from the grapple point, auto retract the poker
-        //if (isPlayerGrappled && isPlayerTooFar())
-        //{
-        //    animator.Play("PokerRetract");
-        //    pokerRange = 5f;
-        //    isPlayerGrappled = false;
-        //}
+        // Toggle showing the recycling guide
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ToggleGuide();
+        }
 
         pokerCounter += Time.deltaTime;
     }
@@ -146,51 +141,11 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    //private bool isPlayerTooFar()
-    //{
-    //    // Check how far the player is from the current grapple point
-    //    float dist = Vector3.Distance(currentGrapplePoint.transform.position, transform.position);
-
-    //    // When the player is too far, return true
-    //    if (dist >= 15f)
-    //    {
-    //        return true;
-    //    }
-
-    //    return false;
-    //}
-
-    //private void CheckIfGrappleIsNear()
-    //{
-    //    var colliders = Physics.OverlapSphere(transform.position, 10f);
-    //    foreach (var collider in colliders)
-    //    {
-    //        if (collider.gameObject.tag == "GrapplePoint")
-    //        {
-    //            // Add colour/material changing
-    //            collider.gameObject.GetComponent<MeshRenderer>().material = yellowMaterial;
-    //        }
-    //    }
-    //}
-
-    // Draws the BoxCast used for jump detection
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawCube(transform.position - transform.up * 1f, boxSize);
-    //}
-
     private void Jump()
     {
         // Make the player jump
         rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
     }
-
-    //private void GrapplePull()
-    //{
-    //    // Pull the player towards the gameObject they are "grappled" to
-    //    rb.AddForce((currentGrapplePoint.transform.position - transform.position) * 2, ForceMode.Impulse);
-    //}
 
     private void CheckGarbage()
     {
@@ -229,16 +184,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private void CheckGrapple()
-    //{
-    //    RaycastHit hit;
-
-    //    // Sends a ray to what the player is looking at. If it's a piece of garbage, delete it
-    //    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, pokerRange, grapplePoint))
-    //    {
-    //        isPlayerGrappled = true;
-    //        currentGrapplePoint = hit.collider.gameObject;
-    //    }
-    //}
+    private void ToggleGuide()
+    {
+        isGuideEnabled = !isGuideEnabled;
+        guideImage.SetActive(isGuideEnabled);
+    }
 }
 
